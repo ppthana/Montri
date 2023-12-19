@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { useAccountStore } from '@/stores/account'
+import LoginLayout from '@/layouts/LoginLayout.vue'
 
 
 const accountStore = useAccountStore()
@@ -22,6 +23,7 @@ const login = async () => {
 </script>
 
 <template>
+  <LoginLayout>
   <div class="min-h-screen bg-base-200 flex items-center">
     <div class="card mx-auto w-full max-w-2xl shadow-xl">
       <div class="py-24 px-10">
@@ -41,4 +43,5 @@ const login = async () => {
       </div>
     </div>
   </div>
+  </LoginLayout>
 </template>

@@ -6,6 +6,8 @@ import AdminLayout from '@/layouts/AdminLayout.vue'
 import { useAdminProductStore } from '@/stores/admin/product'
 import { useEvent } from '@/stores/events.js'
 import VueDatePicker from '@vuepic/vue-datepicker';
+import { storage } from '@/firebase'
+import { ref as storageRef, uploadBytes, getDownloadURL } from 'firebase/storage'
 
 const eventStore = useEvent()
 
@@ -24,6 +26,7 @@ const productData = reactive({
   motobrand: '',
   mototype: '',
   partbrand: '',
+  productLocation: '',
   price: 0,
   remainQuantity: 0,
   quantity: 0,
@@ -37,7 +40,7 @@ const updatedProduct =  async () => {
   
  await adminProduct.updateProduct(productIndex.value, productData)
   eventStore.popupMessage('success', 'Updated')
-  rounter.push({ name: 'admin-product' })
+  // rounter.push({ name: 'admin-product' })
 }
 
 onMounted( async () => {
@@ -53,12 +56,26 @@ onMounted( async () => {
     productData.partbrand = getProduct.partbrand
     productData.price = getProduct.price
     productData.quantity = getProduct.quantity
+    productData.productLocation = getProduct.productLocation
+    productData.remainQuantity = getProduct.remainQuantity
     productData.details = getProduct.details
     productData.expiredDate = getProduct.expiredDate
     productData.status = getProduct.status
 
   }
 })
+
+const handleFileChange = async (event) => {
+  const file = event.target.files[0]
+
+  if (file) {
+    const uploadRef = storageRef(storage, `product-image/${file.name}`)
+    const snapshot = await uploadBytes(uploadRef, file)
+    const downloadURL = await getDownloadURL(snapshot.ref)
+    productData.image = downloadURL
+
+  }
+}
 
 </script>
 
@@ -72,7 +89,13 @@ onMounted( async () => {
           <label class="label">
             <span class="label-text">รูปภาพ</span>
           </label>
-          <input type="text" placeholder="Type here" class="input input-bordered input-secondary w-full " v-model="productData.image" />
+          <!-- <input type="text" placeholder="Type here" class="input input-bordered input-secondary w-full " v-model="productData.image" /> -->
+          <div class="avatar">
+            <div class="w-24 rounded-full">
+              <img :src="productData.image" />
+            </div>
+          </div>
+          <input class="file-input file-input-bordered file-input-primary w-full max-w-xs my-5" type="file"  @change="handleFileChange" accept=".png, .jpg, .jpeg"/>
         </div>
         <div class="form-control w-full ">
           <label class="label">
@@ -112,10 +135,23 @@ onMounted( async () => {
         </div>
         <div class="form-control w-full ">
           <label class="label">
+            <span class="label-text">ที่อยู่สินค้า</span>
+          </label>
+          <input type="text" placeholder="Type here" class="input input-bordered input-secondary w-full " v-model="productData.productLocation" />
+        </div>
+        <div class="form-control w-full ">
+          <label class="label">
+            <span class="label-text">จำนวนสินค้าคงเหลือ</span>
+          </label>
+          <input type="text" placeholder="Type here" class="input input-bordered input-secondary w-full " v-model="productData.remainQuantity" />
+        </div>
+        <div class="form-control w-full ">
+          <label class="label">
             <span class="label-text">จำนวน</span>
           </label>
-          <input type="text" placeholder="Type here" class="input input-bordered input-secondary w-full " v-model="productData.quantity" />
+          <input type="text" placeholder="Type here" class="input input-bordered input-secondary w-full " v-model="productData.quantity" disabled />
         </div>
+
         <div class="form-control w-full ">
           <label class="label">
             <span class="label-text">วันหมดอายุ</span>

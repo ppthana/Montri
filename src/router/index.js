@@ -7,6 +7,8 @@ import ProductView from '../views/Products/ProductView.vue'
 import AddProductView from '../views/Products/AddProductView.vue'
 import DetailView from '../views/Details/DetailView.vue'
 import UpdateProductView from '../views/Products/UpdateProductView.vue'
+import UploadProductView from '../views/Products/UploadProductView.vue'
+import DropcheckView from '../views/Products/DropcheckView.vue'
 import { useAccountStore } from '@/stores/account'
 
 
@@ -46,6 +48,11 @@ const router = createRouter({
             component: AddProductView
         },
         {
+            path: '/admin/products/upload',
+            name: 'admin-product-upload',
+            component: UploadProductView
+        },
+        {
             path: '/admin/product/update/:id',
             name: 'admin-product-update',
             component: UpdateProductView
@@ -54,6 +61,11 @@ const router = createRouter({
             path: '/product-details/:id',
             name: 'product-details',
             component: DetailView
+        },
+        {
+            path: '/admin/drop-check',
+            name: 'admin-dropcheck',
+            component: DropcheckView
         }
 
     ]

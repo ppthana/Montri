@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { collection, doc, getDoc, getDocs, addDoc, setDoc, deleteDoc, query, where } from 'firebase/firestore/lite'
+import { collection, doc, getDoc, getDocs, addDoc, setDoc, deleteDoc, query, where, orderBy } from 'firebase/firestore/lite'
 import { db } from '@/firebase'
 
 export const useAdminProductStore = defineStore('admin-product', {
@@ -9,14 +9,6 @@ export const useAdminProductStore = defineStore('admin-product', {
     }),
     actions: {
         async loadProduct() {
-            // const products = localStorage.getItem('admin-products')
-            // const productSnapshot = await getDocs(collection(db, 'products'))
-            // const products = productSnapshot.docs.map(doc => doc.data())
-
-            // if (products.length > 0) {
-            //     this.list = products
-            //     this.loaded = true
-            // }
             const productCol = collection(db, 'products')
             const productSnapshot = await getDocs(productCol)
             const products = productSnapshot.docs.map(doc => {
@@ -28,7 +20,7 @@ export const useAdminProductStore = defineStore('admin-product', {
             this.list = products
         },
         async showProduct() {
-            const productCol = query(collection(db, 'products'), where('status', '==', 'open'))
+            const productCol = query(collection(db, 'products'), where('status', '==', 'open'), orderBy("partname", "asc"))
             const productSnapshot = await getDocs(productCol)
             const products = productSnapshot.docs.map(doc => {
                 const convertedProduct = doc.data()
@@ -56,9 +48,11 @@ export const useAdminProductStore = defineStore('admin-product', {
                 productData.updatedAt = new Date()
                 const productCol = collection(db, 'products')
                 await addDoc(productCol, productData)
+
             } catch (error) {
                 console.log('error', error)
             }
+
 
         },
 
@@ -72,8 +66,9 @@ export const useAdminProductStore = defineStore('admin-product', {
                 updateProduct.mototype = productData.mototype
                 updateProduct.partbrand = productData.partbrand
                 updateProduct.price = productData.price
+                updateProduct.productLocation = productData.productLocation
                 updateProduct.quantity = productData.quantity
-                updateProduct.remainQuantity = productData.quantity
+                updateProduct.remainQuantity = productData.remainQuantity
                 updateProduct.details = productData.details
                 updateProduct.status = productData.status
                 updateProduct.updatedAt = new Date()

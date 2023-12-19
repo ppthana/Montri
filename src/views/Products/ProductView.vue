@@ -2,23 +2,24 @@
 import { RouterLink } from 'vue-router'
 import AdminLayout from '@/layouts/AdminLayout.vue'
 import { useAdminProductStore } from '@/stores/admin/product'
-
+import { useEvent } from '@/stores/events.js'
 import Edit from '@/components/icon/Edit.vue'
 import Trash from '@/components/icon/Trash.vue'
 import Table from '@/components/Table.vue'
 import { onMounted } from 'vue'
 
 const adminProduct = useAdminProductStore()
-
-onMounted( async () => {
-   await adminProduct.loadProduct()
+const eventStore = useEvent()
+onMounted(async () => {
+  await adminProduct.loadProduct()
 })
 
 const removeProduct = async (index) => {
   try {
     await adminProduct.removeProduct(index)
     eventStore.popupMessage('success', 'Deleted product')
-    await adminProduct.loadProduct()
+    adminProduct.loadProduct()
+
   } catch (error) {
     console.log('error', error)
   }
@@ -58,7 +59,7 @@ console.log('adminProduct', adminProduct.list)
                 </tr>
               </thead> -->
             <!-- <tbody> -->
-            <Table :headers="['Partname', 'Image', 'Price', 'Quantity', 'Status', 'updatedAt', '']">
+            <Table :headers="['ชื่ออะไหล่', 'รูปภาพ', 'ราคา', 'จำนวน', 'ยี่ห้ออะไหล่', 'สถานะ', 'updatedAt', '']">
               <tr v-for="(product, index) in adminProduct.list">
                 <td>{{ product.partname }}</td>
                 <td>
@@ -66,6 +67,7 @@ console.log('adminProduct', adminProduct.list)
                 </td>
                 <td>{{ product.price }}</td>
                 <td>{{ product.remainQuantity }}/{{ product.quantity }}</td>
+                <td>{{ product.partbrand }}</td>
                 <td>
                   <div class="badge" :class="product.status === 'open' ? 'badge-success' : 'badge-error'">
                     {{ product.status }}
@@ -75,13 +77,19 @@ console.log('adminProduct', adminProduct.list)
                 <td>{{ product.updatedAt }}</td>
                 <td>
                   <div class="flex gap-3">
+
                     <RouterLink :to="{ name: 'admin-product-update', params: { id: product.productId } }"
-                      class="btn btn-ghost">
+                      class="btn btn-ghost ">
                       <Edit></Edit>
                     </RouterLink>
+
+
                     <div @click="removeProduct(product.productId)" class="btn btn-ghost">
-                      <Trash></Trash>
+                      <Trash>
+                      </Trash>
                     </div>
+                  
+
                   </div>
                 </td>
               </tr>
@@ -90,5 +98,4 @@ console.log('adminProduct', adminProduct.list)
         </div>
       </div>
     </div>
-  </AdminLayout>
-</template>
+  </AdminLayout></template>

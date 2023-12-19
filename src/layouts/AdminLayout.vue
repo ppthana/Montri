@@ -1,18 +1,9 @@
 <script setup>
-import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { useAccountStore } from '@/stores/account'
 const accountStore = useAccountStore()
 
 const rounter = useRouter()
-const login = async () => {
-  try {
-    await accountStore.signInWithGoogle()
-  } catch (error) {
-    console.log('error', error)
-  }
-
-}
 
 const logout = async () => {
   try {
@@ -23,13 +14,14 @@ const logout = async () => {
   }
 }
 
+
 </script>
 
 <template>
-  <div class="  navbar bg-base-100">
+  <div class="  navbar">
     <div class="flex-1">
       <RouterLink to="/home">
-        <div class="btn btn-ghost text-4xl  text-red-600"> Montri</div>
+        <button class="btn btn-ghost text-4xl  text-red-600"> Montri</button>
       </RouterLink>
     </div>
     <div class="flex-none">
@@ -60,12 +52,12 @@ const logout = async () => {
     </div>
   </div>
   <slot></slot>
-  <div class="fixed bottom-10 bg-primary flex container ">
+  <div v-if="accountStore.profile.role == 'admin'" class="fixed bottom-7 bg-primary flex container ">
     <RouterLink to='/admin/products'>
       <div class=" text-white underline font-semibold">Products</div>
     </RouterLink>
     <div class=" text-white underline font-semibold">itemDesc</div>
-    <div class=" text-white underline font-semibold">Drop check</div>
+    <RouterLink to="/admin/drop-check" class=" text-white underline font-semibold">Purchase form upload</RouterLink>
 
   </div>
 </template>
