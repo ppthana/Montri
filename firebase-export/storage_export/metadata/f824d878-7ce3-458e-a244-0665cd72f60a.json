@@ -1,0 +1,19 @@
+{
+  "name": "product/Part2.csv",
+  "bucket": "motopart-demo.appspot.com",
+  "metageneration": 1,
+  "generation": 1703007123548,
+  "contentType": "text/csv",
+  "storageClass": "STANDARD",
+  "contentDisposition": "inline",
+  "downloadTokens": [
+    "9d7c65fc-af0c-4a2e-a377-25c6856eeaac"
+  ],
+  "etag": "YYyswSwGhekfRl2zZdc9Mju10pA",
+  "customMetadata": {},
+  "timeCreated": "2023-12-19T17:32:03.549Z",
+  "updated": "2023-12-19T17:32:03.549Z",
+  "size": 5198,
+  "md5Hash": "P18HFompRUc0rZ0b1Uo++Q==",
+  "crc32c": "611256058"
+}

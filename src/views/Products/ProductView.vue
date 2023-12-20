@@ -46,19 +46,6 @@ console.log('adminProduct', adminProduct.list)
         <div class="divider mt-2"></div>
         <div class="h-full w-full pb-6 bg-base-100">
           <div class="overflow-x-auto w-full">
-            <!-- <table class="table w-full">
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Image</th>
-                  <th>Price</th>
-                  <th>Quantity</th>
-                  <th>Status</th>
-                  <th>Updated At</th>
-                  <th></th>
-                </tr>
-              </thead> -->
-            <!-- <tbody> -->
             <Table :headers="['ชื่ออะไหล่', 'รูปภาพ', 'ราคา', 'จำนวน', 'ยี่ห้ออะไหล่', 'สถานะ', 'updatedAt', '']">
               <tr v-for="(product, index) in adminProduct.list">
                 <td>{{ product.partname }}</td>
@@ -72,18 +59,14 @@ console.log('adminProduct', adminProduct.list)
                   <div class="badge" :class="product.status === 'open' ? 'badge-success' : 'badge-error'">
                     {{ product.status }}
                   </div>
-
                 </td>
                 <td>{{ product.updatedAt }}</td>
                 <td>
                   <div class="flex gap-3">
-
                     <RouterLink :to="{ name: 'admin-product-update', params: { id: product.productId } }"
                       class="btn btn-ghost ">
                       <Edit></Edit>
                     </RouterLink>
-
-
                     <div @click="removeProduct(product.productId)" class="btn btn-ghost">
                       <Trash>
                       </Trash>

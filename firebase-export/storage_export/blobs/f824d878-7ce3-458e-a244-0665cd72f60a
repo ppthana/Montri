@@ -1,0 +1,32 @@
+image,partname,subname,motobrand,mototype,partbrand,price,quantity,remainQuantity,details,expiredDate,updateAt,status
+,กระจกมองหลัง,,Honda,Nova,Honda,300,10,,,,,open
+,แกนราวลิ้น,"เพลาราวลิ้น, แคม",Yamaha,MIO,Yamaha,1200,10,,"แกนราวลิ้น Yamaha สามารถใช้กับกับมอเตอร์ไซค์ MIO, Fino",,,open
+,แกนล้อหน้า,เพลาล้อหน้า,Honda,Supercup,Honda,105,10,,"แกนล้อหน้า, เพลาล้อหน้า Honda สามารถใช้ได้กับมอเตอร์ไซค์ Honda รุ่น Supercup, Dream110i, Click-125i, Spacyi, Airblade",,,open
+,แกนล้อหลัง,เพลาล้อหลัง,Kawasaki,KR150,,350,10,,"แกนล้อหลัง, เพลาล้อหลัง Kawasaki สามารถใช้ได้กับมอเตอร์ไซค์ Kawasaki KR150 เท่านั้น",,,open
+,แกนสวิงอาร์ม,แกนตะเกียบ,Honda,Wave-125i,Honda,75,10,,แกนสวิงอาร์ม Honda สามารถใช้ได้กับมอเตอร์ไซค์ Honda Wave-125i เท่านั้น,,,open
+,คอท่อ,ท่อท่อนหน้า,Suzuki,Smash,,169,10,,คอท่อไอเสีย Smash 2004 สีดำ,,,open
+,คอยล์หัวเทียน,คอล์ยไฟ,Honda,Wave-110i,Honda,380,10,,คอล์ยหัวเทียน Honda สามารถใช้ได้กับมอเตอร์ไซค์ Honda Wave-110i ปี 2009 - 2010,,,open
+,คอหรีด,"แป้นหลีดวาล์ว, คอคาร์บู",Yamaha,MIO,Yamaha,160,10,,,,,open
+,คันเบรค,ขาเบรค,Kawasaki,Kr-victor,Kawasaki,550,2,,คันเบรคแท้ KR-victor-serpico,,,open
+,คันสตาร์ท,ขาสตาร์ท,Yamaha,Nouvo,Yamaha,480,10,,"คันสตาร์ทแท้ MIO, Nouvo สีดำ",,,open
+,ซี่ลวด,กำ,Honda,Wave-110i,Honda,160,10,,,,,open
+,ไดร์สตาร์ท,มอเตอร์สตาร์ท,Honda,Click-110i,Honda,460,10,,,,,open
+,น้ำยาหล่อเย็น,น้ำยาหม้อน้ำ,Honda,Zoomer-X,Honda,38,10,,,,,open
+,แบตเตอร์รี่,แบตมอไซต์,Honda,Scoopy-I,Honda,820,10,,,,,open
+,ปลั๊กหัวเทียน,หัวนกกระจอก,Honda,Wave-110,Honda,120,10,,,,,open
+,ปั๊มน้ำมันเชื้อเพลิง,ปั๊มติ๊ก,Honda,Zoomer-X,Honda,1840,10,,,,,open
+,ผ้าเบรคหน้า,ดิสเบรค,Honda,Click-110i,TTW,30,10,,"ผ้าเบรคหน้า TTW สามารถใช้ได้กับมอเตอร์ไซค์ Honda Click-110i, Click-125i, Scoopy-i, Zoomer-x",,,open
+,ผ้าเบรคหน้า,ดิสเบรค,Honda,Wave-125,LOCKTE,45,10,,"ผ้าดิสเบรค Lockte สามารถใช้ได้กับมอเตอร์ไซค์ Honda Wave-125, Wave-125R, Wave-125S, Sonic, MSX",,,open
+,ผ้าเบรคหลัง,ดรัมเบรค,Honda,MSX-125SF,Yasaki,65,10,,"ผ้าเบรคหลัง Yasaki ใช้สำหรับมอเตอร์ไซค์ MSX, MSX-SF, CBR-150i",,,open
+,ฟิลคอยล์,"เจเนอร์เรเตอร์, มัดไฟ",Suzuki,Smash,Suzuki,649,10,,,,,open
+,ยางกลิ้งโซ่,ยางนำโซ่,Honda,Wave-110,Honda,40,10,,,,,open
+,ลูกปืน,"ตลับลูกปืน, แบร์ริ่ง",Yamaha,Nouvo,Yamaha,200,10,,,,,open
+,วาล์วไอดี,"หลอดวาล์วไอดี, ดอกวาล์วไอดี",Honda,Wave-125i,Honda,120,10,,,,,open
+,สวิงอาร์ม,ตะเกียบ,Honda,Wave-125i,Honda,1140,10,,,,,open
+,สายพาน,,Honda,Scoopy-I,Honda,319,10,,,,,open
+,ไส้กรองอากาศ,แผ่นกรองอากาศ,Yamaha,Grand filano,Yamaha,180,10,,,,,open
+,หัวเทียน,,Yamaha,Qbix,Yamaha,80,10,,,,,open
+,สเตอร์หน้า,เฟืองหน้า,Kawasaki,Z-125,Jomthai,56,10,,สเตอร์หน้า Jomthai ขนาด 420 ใช้สำหรับมอเตอร์ไซค์ Kawasaki Z-125/KSR,,,open
+,สเตอร์หลัง,เฟืองท้าย,Kawasaki,KSR,Jomthai,167,10,,สเตอร์หลัง Jomthai ขนาด 420 ใช้สำหรับมอเตอร์ไซค์ Kawasaki KSR,,,open
+,โช๊ค,,Honda,PCX-150,YSS,4000,10,,โช๊คหลัง YSS สามาถใช้ได้กับมอเตอร์ไซค์ Honda PCX-150 เท่านั้น,,,open
+,โช๊ค,,Honda,Click-150i,Ohlin,13300,10,,โช๊คหลัง Oħlins แท้สามารถใช้ได้กับมอเตอร์ไซค์ Honda Click-150i ปี 2018-2022 ,,,open

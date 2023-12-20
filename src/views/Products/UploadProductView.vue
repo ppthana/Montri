@@ -63,7 +63,7 @@ const handleFileChange = async (event) => {
           rowData.forEach(async (row) => {
 
             if (row.image === '') {
-              row.status = 'open'
+              row.status = 'close'
               await uploadProduct(row)
               console.log(row.status)
             } else {

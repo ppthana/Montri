@@ -253,8 +253,8 @@ const clearAllFilters = () => {
         <div v-for="(item, index) in productsStore.list" :key="index">
           <div
             v-if="itemName === (item.partname || item.subname) || searchmotoBrand === item.motobrand || searchmotoType === item.mototype || searchpartBrand === item.partbrand"
-            class="content card w-30vh bg-base-100 shadow-xl">
-            <figure><img class="w-full " :src="item.image" /></figure>
+            class="content card w-30vh max-h-96 bg-base-100 shadow-xl">
+            <figure><img class="w-full max-h-max" :src="item.image" /></figure>
             <div class="card-body">
               <h2 class="card-title">{{ item.partname }} {{ item.motobrand }}</h2>
               <!-- <p>ยี่ห้อมอเตอร์ไซค์: {{ item.motobrand }}</p> -->
@@ -268,8 +268,8 @@ const clearAllFilters = () => {
           </div>
 
           <div v-else-if="itemName === '' && searchmotoBrand === '' && searchmotoType === '' && searchpartBrand === ''"
-            class="content card w-30vh bg-base-100 shadow-2xl">
-            <figure><img class="w-full  " :src="item.image" /></figure>
+            class="content card w-30vh max-h-96 bg-base-100 shadow-2xl">
+            <figure><img class="w-full max-h-max" :src="item.image" /></figure>
             <div class="card-body">
               <h2 class="card-title">{{ item.partname }} {{ item.motobrand }}</h2>
 

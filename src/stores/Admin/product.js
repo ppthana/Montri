@@ -20,7 +20,7 @@ export const useAdminProductStore = defineStore('admin-product', {
             this.list = products
         },
         async showProduct() {
-            const productCol = query(collection(db, 'products'), where('status', '==', 'open'), orderBy("partname", "asc"))
+            const productCol = query(collection(db, 'products'), orderBy("partname", "desc"), where('status', '==', 'open'))
             const productSnapshot = await getDocs(productCol)
             const products = productSnapshot.docs.map(doc => {
                 const convertedProduct = doc.data()
