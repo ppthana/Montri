@@ -36,7 +36,7 @@ const productData = reactive({
 const createProduct = async () => {
   try {
     await adminProduct.addProduct(productData)
-    eventStore.popupMessage('success', 'Created Item')
+    eventStore.popupMessage('success', 'Item Created')
     // rounter.push({ name: 'admin-product' })
   } catch (error) {
     console.log('error', error)

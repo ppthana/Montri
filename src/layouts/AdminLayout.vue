@@ -9,6 +9,7 @@ const logout = async () => {
   try {
     await accountStore.logout()
     rounter.push({ name: 'login' })
+    
   } catch (error) {
     console.log('error', error)
   }

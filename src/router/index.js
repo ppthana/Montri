@@ -74,7 +74,13 @@ const router = createRouter({
 router.beforeEach(async(to, from, next) => {
     const accountStore = useAccountStore()
     await accountStore.checkAuth()
-    next()
+
+    // next()
+    if (to.name.includes('homepage') && !accountStore.isAdmin) {
+        next({ name: 'login' })
+    } else {
+        next()
+    }
 })
 
 export default router

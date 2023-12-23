@@ -3,19 +3,33 @@ import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { useAccountStore } from '@/stores/account'
 import LoginLayout from '@/layouts/LoginLayout.vue'
+import { useEvent } from '@/stores/events.js'
+
+
 
 
 const accountStore = useAccountStore()
 const router = useRouter()
 const email = ref('')
 const password = ref('')
-
+const eventStore = useEvent()
+const isValidEmail = (value) => {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+  return emailRegex.test(value)
+}
 const login = async () => {
+  if (!isValidEmail(email.value)) {
+    console.log('Invalid email format')
+    eventStore.popupMessage('error', 'Invalid email format')
+    return
+  }
+
   console.log('email', email.value)
   console.log('password', password.value)
   try {
     await accountStore.signInAdmin(email.value, password.value)
     router.push({ name: 'Homepage' })
+    
   } catch (error) {
     console.log('error', error)
   }
