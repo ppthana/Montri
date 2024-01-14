@@ -71,29 +71,9 @@ git clone https://github.com/ppthana/Montri.git
 npm install
 ```
 
-5. ติดตั้ง tailwinds ผ่านคำสั่ง
-```
-npm install -D tailwindcss postcss autoprefixer
-npx tailwindcss init -p
-```
-
-6. ติดตั้ง daisyUI ผ่านคำสั่ง
-```
-npm i -D daisyui@latest
-```
-7. ติดตั้ง could firebase ผ่านคำสั่ง
-``` 
-npm install -g firebase-cli
-firebase init
-```
-8. เมื่อทำการลง package ทั้งหมดเรียบร้อยและสามารถ run คำสั่ง npm run dev ได้แล้วให้ ทำการเปิด terminal หรือ command promt ขึ้นมาและ cd เข้าไปใน project และใช้คำสั่งเพื่อ run emulator ของ could firebase 
+5. เมื่อทำการลง package ทั้งหมดเรียบร้อยและสามารถ run คำสั่ง npm run dev ได้แล้วให้ ทำการเปิด terminal หรือ command promt ขึ้นมาและ cd เข้าไปใน project และใช้คำสั่งเพื่อ run emulator ของ could firebase 
 ```
 firebase emulators:start
 หรือ
 firebase emulators:start --import ./firebase-export --export-on-exit ./firebase-export
 ```
- 
-
-
-
-
