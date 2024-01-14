@@ -60,7 +60,7 @@ npm i node@18.18.2
 
 2. ติดตั้ง git ผ่าน Command Prompt หรือ Powershell ผ่านคำสั่ง
 ```
-npm i npm-git-install
+winget install --id Git.Git -e --source winget
 ```
 3. ใช้คำสั่ง git clone เพื่อทำการคัดลอกโปรเจกต์
 ```
