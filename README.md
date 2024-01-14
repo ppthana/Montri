@@ -86,6 +86,12 @@ npm i -D daisyui@latest
 npm install -g firebase-cli
 firebase init
 ```
+8. เมื่อทำการลง package ทั้งหมดเรียบร้อยและสามารถ run คำสั่ง npm run dev ได้แล้วให้ ทำการเปิด terminal หรือ command promt ขึ้นมาและ cd เข้าไปใน project และใช้คำสั่งเพื่อ run emulator ของ could firebase 
+```
+firebase emulators:start
+หรือ
+firebase emulators:start --import ./firebase-export --export-on-exit ./firebase-export
+```
  
 
 
