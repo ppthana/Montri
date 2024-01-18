@@ -51,6 +51,7 @@
 |── package.json
 |── storage.rules
 |── tailwind.config.js
+|── README.md
 ```
 ## ขั้นตอนในการติดตั้ง
 1. ติดตั้ง node version 18.18.2 โดย copy ผ่านเว็บ https://www.npmjs.com/package/node/v/18.18.2
